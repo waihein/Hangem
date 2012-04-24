@@ -8,7 +8,16 @@ using namespace std;
 
 int main()
 {
-    fileIO dictFile( "dictionary.txt", 1 ); // OPEN FILE
+    
+    //passing the file name like this end in deprecated conversion error because
+    //it is a constant string
+    // so here is how i fixed it. I dont really like the way I fixe it though
+    
+    
+    // Or fileio.h and fileio.cpp, if we change the parameters and the variables to const, it works too
+    char *filename = new char [14];
+    strcpy(filename, "dictionary.txt");
+    fileIO dictFile( filename, 1 ); // OPEN FILE
 
     string* words = dictFile.Getwords(); // GET THE WORDS
 
@@ -33,6 +42,8 @@ int main()
     char ch;
     cout << "\n\nPress q and then hit enter to quit.\n";
     cin >> ch;
-
+    
+    delete [] filename;
+    filename = NULL;
     return 0;
 }
