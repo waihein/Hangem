@@ -30,6 +30,29 @@ char player::Getguess()
     return guess;
 }
 
+bool player::checkGuess( char guess)
+{
+    // get the word from the file
+    // use strstr( word, guess)
+	// if strstr != NULLL then
+	// call addWin()
+	// else if strstr == NULL then
+	// then call showHangman()
+}
+
+void player::showHangman()
+{
+    //system("cls")
+    // switch( number)
+    // case 1: cout<< hangMan1 << endl;
+    /*
+        case2: cout<< hangman2 << endl;
+        .
+        .
+        .
+        case6: cout<< hangman6 << endl;
+    */
+}
 void player::addWin( )
 {
     wins +=1;
